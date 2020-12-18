@@ -8,8 +8,9 @@ var ground, invisibleGround, groundImage;
 var cloudsGroup, cloudImage;
 var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obstacle6;
 
-var score=0;
 
+var score=0;
+var finalscore=10;
 var gameOver, restart;
 
 localStorage["HighestScore"] = 0;
@@ -74,7 +75,7 @@ function draw() {
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
-    score = score + Math.round(getFrameRate()/60);
+    score = finalscore + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
   
     if(keyDown("space") && trex.y >= 159) {
